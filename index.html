@@ -8,51 +8,73 @@
     <meta name="keywords" content="RIAN7X, RIAN7X Oficial, SevenX, música, jogos, cantor, compositor, criador de conteúdo, Marco Ce, YouTube, Instagram, Twitter">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Estilo para o corpo da página com a fonte Inter */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Adicionando um gradiente sutil ao fundo e melhorando o contraste do texto */
         .custom-bg {
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
         }
         .channel-card {
-            background-color: rgba(255, 255, 255, 0.05); /* Fundo do card levemente transparente */
-            backdrop-filter: blur(10px); /* Efeito de vidro fosco para navegadores que suportam */
-            -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Para alinhar o botão ao final se a altura variar */
-            width: 100%; /* Faz o card ocupar a largura disponível na coluna */
-            max-width: 500px; /* Define uma largura máxima para os cards em telas maiores */
-            margin-left: auto; /* Centraliza o card quando max-width é atingido */
-            margin-right: auto; /* Centraliza o card quando max-width é atingido */
+            justify-content: space-between;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .channel-card:hover {
+            transform: scale(1.03);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+        }
+        .channel-card.jogos-card:hover {
+            border-color: #a78bfa;
+        }
+        .channel-card.sevenx-card:hover {
+            border-color: #7dd3fc;
+        }
+        .channel-card.musica-card:hover {
+            border-color: #f472b6;
         }
         .btn-custom {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            font-weight: 600; /* semibold para texto de botões */
         }
         .btn-custom:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
         }
-        .profile-image { /* Estilo para a imagem do perfil */
-            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+        .profile-image {
+            object-fit: cover;
         }
-        .bio-text p { /* Estilo para os parágrafos da bio */
-            margin-bottom: 0.25rem; /* Adiciona um pequeno espaço entre as linhas da bio */
+        .bio-text p {
+            margin-bottom: 0.25rem;
         }
-        .social-link, .music-link { /* Estilo para links de redes sociais e música */
-            color: #a78bfa; /* Cor roxa clara para o link, combinando com o tema */
+        .social-link, .music-link {
+            color: #a78bfa;
             text-decoration: none;
+            transition: color 0.2s ease-in-out;
         }
         .social-link:hover, .music-link:hover {
             text-decoration: underline;
+            color: #c4b5fd;
         }
         .footer-social-links {
-            margin-bottom: 1rem; /* Espaço abaixo dos links sociais no rodapé */
+            margin-bottom: 1rem;
         }
-         .footer-social-links .social-link { /* Espaçamento apenas para links sociais no rodapé */
+         .footer-social-links .social-link {
             margin: 0 0.5rem;
+        }
+        h1 { /* Título principal da página */
+            font-weight: 700; /* bold */
+        }
+        h2 { /* Títulos de cards */
+             font-weight: 600; /* semibold */
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -69,49 +91,49 @@
                 <p>🎥 Criador de Conteúdo</p>
                 <p>🔥 Marco Ce | Música e Inspiração</p>
             </div>
-            <p class="text-gray-300 mt-6 text-lg">Confira meus conteúdos de Jogos e Música.</p>
+            <p class="text-gray-300 mt-6 text-base sm:text-lg">Confira meus conteúdos de Jogos e Música.</p>
         </header>
 
         <div class="grid grid-cols-1 gap-8">
 
-            <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+            <div class="channel-card jogos-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-purple-400">
                 <div>
-                    <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg border-2 border-purple-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
+                    <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
                     <h2 class="text-2xl font-semibold mb-3 text-purple-300">Canal de Jogos</h2>
                     <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
                         Aqui você encontra gameplays épicas, dicas e muita diversão do universo dos games!
                     </p>
                 </div>
                 <a href="https://www.youtube.com/@Rian7xOfc2" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
+                   class="btn-custom bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
                     Visitar Canal de Jogos
                 </a>
             </div>
 
-            <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+            <div class="channel-card sevenx-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-blue-400">
                 <div>
-                    <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg border-2 border-blue-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
+                    <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
                     <h2 class="text-2xl font-semibold mb-3 text-blue-300">SevenX</h2>
                     <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
                         O futuro nois aguarda
                     </p>
                 </div>
                 <a href="https://www.youtube.com/@7xSevenx" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
+                   class="btn-custom bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
                     Visitar SevenX
                 </a>
             </div>
 
-            <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+            <div class="channel-card musica-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-pink-400">
                 <div>
-                    <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg border-2 border-pink-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
+                    <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
                     <h2 class="text-2xl font-semibold mb-3 text-pink-300">Canal de Música</h2>
                     <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
                         Curta minhas composições, covers e tudo sobre o mundo da música.
                     </p>
                 </div>
                 <a href="https://www.youtube.com/@Rian7xOfc" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto">
+                   class="btn-custom bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto">
                     Visitar Canal de Música
                 </a>
                 <p class="mt-4 text-sm">
@@ -137,7 +159,6 @@
     </div>
 
     <script>
-        // Script para atualizar o ano no rodapé
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
