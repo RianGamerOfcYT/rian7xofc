@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIAN7X - Canais do YouTube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilo para o corpo da página com a fonte Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Adicionando um gradiente sutil ao fundo e melhorando o contraste do texto */
+        .custom-bg {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        }
+        .channel-card {
+            background-color: rgba(255, 255, 255, 0.05); /* Fundo do card levemente transparente */
+            backdrop-filter: blur(10px); /* Efeito de vidro fosco para navegadores que suportam */
+            -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Para alinhar o botão ao final se a altura variar */
+        }
+        .btn-custom {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image { /* Estilo para a imagem do perfil */
+            width: 100px; /* Largura da imagem */
+            height: 100px; /* Altura da imagem */
+            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+        }
+        .bio-text p { /* Estilo para os parágrafos da bio */
+            margin-bottom: 0.25rem; /* Adiciona um pequeno espaço entre as linhas da bio */
+        }
+        .social-link { /* Estilo para links de redes sociais */
+            color: #a78bfa; /* Cor roxa clara para o link, combinando com o tema */
+            text-decoration: none;
+            margin: 0 0.5rem; /* Espaçamento entre os links sociais */
+        }
+        .social-link:hover {
+            text-decoration: underline;
+        }
+        .footer-social-links {
+            margin-bottom: 1rem; /* Espaço abaixo dos links sociais no rodapé */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="custom-bg text-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+                RIAN7X
+            </h1>
+            <div class="bio-text text-gray-300 mt-4 text-md">
+                <p>🎤 Cantor & Compositor | 18 anos</p>
+                <p>🎥 Criador de Conteúdo</p>
+                <p>🔥 Marco Ce | Música e Inspiração</p>
+            </div>
+            <p class="text-gray-300 mt-6 text-lg">Confira meus conteúdos de Jogos e Música.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <div>
+                    <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="w-24 h-24 rounded-full mb-4 shadow-lg border-2 border-purple-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
+                    <h2 class="text-2xl font-semibold mb-3 text-purple-300">Canal de Jogos</h2>
+                    <p class="text-gray-400 mb-6 text-sm h-16">
+                        Aqui você encontra gameplays épicas, dicas e muita diversão do universo dos games!
+                    </p>
+                </div>
+                <a href="https://www.youtube.com/@Rian7xOfc2" target="_blank" rel="noopener noreferrer"
+                   class="btn-custom bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
+                    Visitar Canal de Jogos
+                </a>
+            </div>
+
+            <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <div>
+                    <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="w-24 h-24 rounded-full mb-4 shadow-lg border-2 border-pink-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
+                    <h2 class="text-2xl font-semibold mb-3 text-pink-300">Canal de Música</h2>
+                    <p class="text-gray-400 mb-6 text-sm h-16">
+                        Curta minhas composições, covers e tudo sobre o mundo da música.
+                    </p>
+                </div>
+                <a href="https://www.youtube.com/@Rian7xOfc" target="_blank" rel="noopener noreferrer"
+                   class="btn-custom bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
+                    Visitar Canal de Música
+                </a>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-700">
+            <div class="footer-social-links text-gray-300 text-md">
+                <a href="https://www.instagram.com/rian7xofc/" target="_blank" rel="noopener noreferrer" class="social-link">📸 Instagram</a>
+                <a href="https://x.com/Rian7xOfc" target="_blank" rel="noopener noreferrer" class="social-link">🐦 Twitter/X</a>
+            </div>
+            <p class="text-gray-400 text-sm">
+                © <span id="currentYear"></span> RIAN7X. Todos os direitos reservados.
+            </p>
+            <p class="text-gray-500 text-xs mt-1">
+                Feito com ❤️ e Tailwind CSS.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Script para atualizar o ano no rodapé
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
