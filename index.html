@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIAN7X Oficial</title>
+    <meta name="description" content="Página oficial de RIAN7X. Cantor, compositor e criador de conteúdo de jogos e música. Conheça meus canais e redes sociais.">
+    <meta name="keywords" content="RIAN7X, RIAN7X Oficial, SevenX, música, jogos, cantor, compositor, criador de conteúdo, Marco Ce, YouTube, Instagram, Twitter">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Estilo para o corpo da página com a fonte Inter */
@@ -21,6 +23,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between; /* Para alinhar o botão ao final se a altura variar */
+            width: 100%; /* Faz o card ocupar a largura disponível na coluna */
+            max-width: 500px; /* Define uma largura máxima para os cards em telas maiores */
+            margin-left: auto; /* Centraliza o card quando max-width é atingido */
+            margin-right: auto; /* Centraliza o card quando max-width é atingido */
         }
         .btn-custom {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -35,16 +41,18 @@
         .bio-text p { /* Estilo para os parágrafos da bio */
             margin-bottom: 0.25rem; /* Adiciona um pequeno espaço entre as linhas da bio */
         }
-        .social-link { /* Estilo para links de redes sociais */
+        .social-link, .music-link { /* Estilo para links de redes sociais e música */
             color: #a78bfa; /* Cor roxa clara para o link, combinando com o tema */
             text-decoration: none;
-            margin: 0 0.5rem; /* Espaçamento entre os links sociais */
         }
-        .social-link:hover {
+        .social-link:hover, .music-link:hover {
             text-decoration: underline;
         }
         .footer-social-links {
             margin-bottom: 1rem; /* Espaço abaixo dos links sociais no rodapé */
+        }
+         .footer-social-links .social-link { /* Espaçamento apenas para links sociais no rodapé */
+            margin: 0 0.5rem;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -64,7 +72,7 @@
             <p class="text-gray-300 mt-6 text-lg">Confira meus conteúdos de Jogos e Música.</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 gap-8">
 
             <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
                 <div>
@@ -82,6 +90,20 @@
 
             <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
                 <div>
+                    <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg border-2 border-blue-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
+                    <h2 class="text-2xl font-semibold mb-3 text-blue-300">SevenX</h2>
+                    <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
+                        O futuro nois aguarda
+                    </p>
+                </div>
+                <a href="https://www.youtube.com/@7xSevenx" target="_blank" rel="noopener noreferrer"
+                   class="btn-custom bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
+                    Visitar SevenX
+                </a>
+            </div>
+
+            <div class="channel-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <div>
                     <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg border-2 border-pink-400 mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
                     <h2 class="text-2xl font-semibold mb-3 text-pink-300">Canal de Música</h2>
                     <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
@@ -89,9 +111,14 @@
                     </p>
                 </div>
                 <a href="https://www.youtube.com/@Rian7xOfc" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto">
+                   class="btn-custom bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md w-full md:w-auto">
                     Visitar Canal de Música
                 </a>
+                <p class="mt-4 text-sm">
+                    <a href="https://www.instagram.com/p/DI85hsxx5VbHhkRAJpRDC_ZZG5jrOhPfz5pj-g0/" target="_blank" rel="noopener noreferrer" class="music-link">
+                        🎶 Ouça minha música no Instagram
+                    </a>
+                </p>
             </div>
         </div>
 
