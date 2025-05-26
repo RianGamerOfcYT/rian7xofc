@@ -25,7 +25,7 @@ Esta página serve como um cartão de visitas digital, facilitando o acesso aos 
 
 Este site está hospedado no GitHub Pages. Você pode acessá-lo através do seguinte link:
 
-`https://[SEU_USUARIO_GITHUB].github.io/[NOME_DO_REPOSITORIO]/`
+https://riangamerofcyt.github.io/rian7xofc/
 
 ## 🛠️ Como Editar
 
