@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIAN7X Oficial</title>
-    <meta name="description" content="Página oficial de RIAN7X. Cantor, compositor e criador de conteúdo de jogos e música. Conheça meus canais e redes sociais.">
-    <meta name="keywords" content="RIAN7X, RIAN7X Oficial, SevenX, música, jogos, cantor, compositor, criador de conteúdo, Marco Ce, YouTube, Instagram, Twitter, TRAP, Free Fire, FC Mobile">
+    <meta name="description" content="Página oficial de RIAN7X. Cantor, compositor e criador de conteúdo de jogos e música. Ouça minhas músicas no Spotify, Deezer e Apple Music. Conheça meus canais e redes sociais.">
+    <meta name="keywords" content="RIAN7X, RIAN7X Oficial, SevenX, música, jogos, cantor, compositor, criador de conteúdo, Marco Ce, YouTube, Instagram, Twitter, TRAP, Free Fire, FC Mobile, Spotify, Deezer, Apple Music">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -14,37 +14,52 @@
         .custom-bg {
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
         }
-        .channel-card, .about-section {
+        .about-section {
             background-color: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             border-radius: 0.75rem;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
         }
         .channel-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 100%;
         }
         .channel-card:hover {
             transform: scale(1.03);
             background-color: rgba(255, 255, 255, 0.08);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
         }
-        .channel-card.jogos-card:hover {
-            border-color: #a78bfa;
+        .channel-card.jogos-card:hover { border-color: #a78bfa; }
+        .channel-card.sevenx-card:hover { border-color: #7dd3fc; }
+        .channel-card.musica-card:hover { border-color: #f472b6; }
+        .channel-card.spotify-card {
+            border-color: #1DB954;
+            padding: 0; /* Removendo padding para o iframe ocupar todo o espaço do card */
+            overflow: hidden; /* Para garantir que o border-radius do iframe seja respeitado */
         }
-        .channel-card.sevenx-card:hover {
-            border-color: #7dd3fc;
+        .channel-card.spotify-card:hover {
+            border-color: #1ED760;
+            /* Mantém o transform e shadow, mas o background do card não será visível sob o iframe */
+            background-color: rgba(255, 255, 255, 0.05); /* Resetando para não interferir com o iframe */
         }
-        .channel-card.musica-card:hover {
-            border-color: #f472b6;
-        }
+        .channel-card.deezer-card { border-color: #EF5466; }
+        .channel-card.deezer-card:hover { border-color: #FF7281; }
+        .channel-card.applemusic-card { border-color: #FA233E; }
+        .channel-card.applemusic-card:hover { border-color: #FF5C72; }
+
         .btn-custom {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
             font-weight: 600;
@@ -53,111 +68,160 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
         }
-        .profile-image {
+        .platform-logo-container {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        .platform-img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            border-radius: 9999px;
         }
-        .bio-text-header p {
-             line-height: 1.6;
-        }
-        .about-section p {
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
+        .bio-text-header p { line-height: 1.6; }
+        .about-section p { line-height: 1.7; font-size: 0.95rem; }
         .social-link, .music-link {
             color: #a78bfa;
             text-decoration: none;
-            display: inline-block; /* Para transform funcionar corretamente */
+            display: inline-block;
             transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
         .social-link:hover, .music-link:hover {
             text-decoration: underline;
-            color: #ffffff; /* Cor branca no hover para mais destaque */
-            transform: scale(1.05); /* Leve aumento no hover */
+            color: #ffffff;
+            transform: scale(1.05);
         }
         .footer-social-links {
             margin-bottom: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1rem;
         }
-         .footer-social-links .social-link {
-            margin: 0 0.5rem;
-        }
-        h1 {
-            font-weight: 700;
-        }
-        h2, .about-title {
-             font-weight: 600;
-        }
+        h1 { font-weight: 700; }
+        h2, .section-title { font-weight: 600; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="custom-bg text-gray-100 min-h-screen flex flex-col items-center p-4">
 
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="container mx-auto px-4 py-8">
         <header class="text-center mb-8">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
                 RIAN7X
             </h1>
-            <p class="text-gray-300 mt-6 text-base sm:text-lg">Confira meus conteúdos de Jogos e Música.</p>
+            <p class="text-gray-300 mt-6 text-base sm:text-lg">Confira meus conteúdos e músicas!</p>
         </header>
 
         <section class="about-section p-6 mb-12 text-center">
-            <h2 class="about-title text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Sobre Mim</h2>
+            <h2 class="section-title text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Sobre Mim</h2>
             <div class="bio-text-header text-gray-300 text-md">
                 <p>Diretamente de Marco, RIAN7X! 🎤 Artista de TRAP e criador de conteúdo focado em Free Fire e FC Mobile. Com o objetivo de ser o maior cantor da cidade e levar nossa arte para o reconhecimento global, inspirando outros a sonharem alto. 🌟</p>
             </div>
         </section>
 
-        <div class="grid grid-cols-1 gap-8">
-
-            <div class="channel-card jogos-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-purple-400">
-                <div>
-                    <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
-                    <h2 class="text-2xl font-semibold mb-3 text-purple-300">Canal de Jogos</h2>
-                    <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
-                        Aqui você encontra gameplays épicas, dicas e muita diversão do universo dos games!
-                    </p>
-                </div>
-                <a href="https://www.youtube.com/@Rian7xOfc2" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto flex items-center justify-center">
-                    <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                    <span>Visitar Canal de Jogos</span>
-                </a>
-            </div>
-
-            <div class="channel-card sevenx-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-blue-400">
-                <div>
-                    <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
-                    <h2 class="text-2xl font-semibold mb-3 text-blue-300">SevenX</h2>
-                    <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
-                        O futuro nois aguarda
-                    </p>
-                </div>
-                <a href="https://www.youtube.com/@7xSevenx" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto flex items-center justify-center">
-                    <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                    <span>Visitar SevenX</span>
-                </a>
-            </div>
-
-            <div class="channel-card musica-card rounded-xl shadow-2xl p-6 flex flex-col items-center text-center border-2 border-pink-400">
-                <div>
-                    <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
-                    <h2 class="text-2xl font-semibold mb-3 text-pink-300">Canal de Música</h2>
-                    <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
-                        Curta minhas composições, covers e tudo sobre o mundo da música.
-                    </p>
-                </div>
-                <a href="https://www.youtube.com/@Rian7xOfc" target="_blank" rel="noopener noreferrer"
-                   class="btn-custom bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto flex items-center justify-center">
-                    <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                    <span>Visitar Canal de Música</span>
-                </a>
-                <p class="mt-4 text-sm">
-                    <a href="https://www.instagram.com/p/DI85hsxx5VbHhkRAJpRDC_ZZG5jrOhPfz5pj-g0/" target="_blank" rel="noopener noreferrer" class="music-link">
-                        🎶 Ouça minha música no Instagram
+        <section class="mb-16">
+            <h2 class="section-title text-3xl font-semibold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Meus Canais</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="channel-card jogos-card p-6 flex flex-col items-center text-center border-2 border-purple-400">
+                    <div>
+                        <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
+                        <h2 class="text-2xl font-semibold mb-3 text-purple-300">Canal de Jogos</h2>
+                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
+                            Aqui você encontra gameplays épicas, dicas e muita diversão do universo dos games!
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/@Rian7xOfc2" target="_blank" rel="noopener noreferrer"
+                       class="btn-custom bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto flex items-center justify-center">
+                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
+                        <span>Visitar Canal de Jogos</span>
                     </a>
-                </p>
+                </div>
+
+                <div class="channel-card sevenx-card p-6 flex flex-col items-center text-center border-2 border-blue-400">
+                    <div>
+                        <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
+                        <h2 class="text-2xl font-semibold mb-3 text-blue-300">SevenX</h2>
+                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
+                            O futuro nois aguarda
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/@7xSevenx" target="_blank" rel="noopener noreferrer"
+                       class="btn-custom bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto flex items-center justify-center">
+                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
+                        <span>Visitar SevenX</span>
+                    </a>
+                </div>
+
+                <div class="channel-card musica-card p-6 flex flex-col items-center text-center border-2 border-pink-400">
+                    <div>
+                        <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4 shadow-lg mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
+                        <h2 class="text-2xl font-semibold mb-3 text-pink-300">Canal de Música</h2>
+                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
+                            Curta minhas composições, covers e tudo sobre o mundo da música.
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/@Rian7xOfc" target="_blank" rel="noopener noreferrer"
+                       class="btn-custom bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto flex items-center justify-center">
+                         <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
+                        <span>Visitar Canal de Música</span>
+                    </a>
+                    <p class="mt-4 text-sm">
+                        <a href="https://www.instagram.com/p/DI85hsxx5VbHhkRAJpRDC_ZZG5jrOhPfz5pj-g0/" target="_blank" rel="noopener noreferrer" class="music-link">
+                            🎶 Ouça minha música no Instagram
+                        </a>
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="section-title text-3xl font-semibold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">Ouça Minhas Músicas</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="channel-card spotify-card border-2"> <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0HdsNGdAYF3Zg3aJRuhmno?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="channel-card deezer-card p-6 flex flex-col items-center text-center border-2">
+                    <div class="platform-logo-container mx-auto" style="border-color: #EF5466;">
+                         <img src="https://play-lh.googleusercontent.com/F9uslCD68SA59MsRuLJ4vT0o1a6WccmFufSRtfCaIg12K45jySvUqOViLWNSURq-NXyE" alt="Logo Deezer" class="platform-img" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EF5466/FFFFFF?text=🎶&fontsize=40';">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-3" style="color: #EF5466;">Deezer</h2>
+                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
+                            Todas as minhas músicas também disponíveis no Deezer.
+                        </p>
+                    </div>
+                    <a href="https://dzr.page.link/V86qtZ8Bi8Dzrz4P8" target="_blank" rel="noopener noreferrer"
+                       class="btn-custom text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto flex items-center justify-center" style="background-color: #EF5466;" onmouseover="this.style.backgroundColor='#E52D41'" onmouseout="this.style.backgroundColor='#EF5466'">
+                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
+                        <span>Ouvir no Deezer</span>
+                    </a>
+                </div>
+
+                <div class="channel-card applemusic-card p-6 flex flex-col items-center text-center border-2">
+                     <div class="platform-logo-container mx-auto" style="border-color: #FA233E; background-color: #000000;">
+                        <img src="https://help.apple.com/assets/679AD7334ADC9F385B08BC10/679AD73481880455AD0B6174/pt_BR/14afc11a08e3fe617b2404ee08a0d0af.png" alt="Logo Apple Music" class="platform-img" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FA233E/FFFFFF?text=🎵&fontsize=40';">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-3" style="color: #FA233E;">Apple Music</h2>
+                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
+                            Encontre minhas faixas na Apple Music.
+                        </p>
+                    </div>
+                    <a href="https://music.apple.com/br/artist/rian7x/1816869659" target="_blank" rel="noopener noreferrer"
+                       class="btn-custom text-white py-3 px-6 rounded-lg shadow-md w-full md:w-auto mt-auto flex items-center justify-center" style="background-color: #FA233E;" onmouseover="this.style.backgroundColor='#E10E2A'" onmouseout="this.style.backgroundColor='#FA233E'">
+                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
+                        <span>Ouvir na Apple Music</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <footer class="text-center mt-12 py-6 border-t border-gray-700">
             <div class="footer-social-links text-gray-300 text-md">
