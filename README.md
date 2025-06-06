@@ -1,32 +1,29 @@
-# RIAN7X - Página Oficial de Divulgação
+# RIAN7X - Landing Page Oficial (V3.1)
 
-Bem-vindo ao repositório da página oficial de RIAN7X! Este site serve como um hub central para todos os canais, músicas e redes sociais de RIAN7X, facilitando o acesso dos fãs e de novos visitantes.
+Bem-vindo ao repositório da landing page oficial de RIAN7X. Este projeto foi evoluído para uma experiência de landing page completa, com um design moderno, animações e uma estrutura focada em guiar o visitante através dos diferentes universos de conteúdo do artista.
 
 ## 🚀 Sobre o Projeto
 
-Esta página foi desenvolvida para ser um cartão de visitas digital completo, apresentando os diversos talentos e projetos de RIAN7X.
+Esta página serve como um hub central e um cartão de visitas digital de alto impacto para todos os canais, músicas e redes sociais de RIAN7X.
 
-**Funcionalidades Principais:**
+**Funcionalidades Principais na V3.1:**
 
-* **Seção "Sobre Mim":** Uma apresentação pessoal de RIAN7X, seus objetivos e inspirações.
-* **Seção "Meus Canais":**
-    * Card para o Canal de Jogos (YouTube)
-    * Card para o projeto SevenX (YouTube)
-    * Card para o Canal de Música (YouTube)
-* **Seção "Ouça Minhas Músicas":**
-    * Player incorporado do Spotify
-    * Card para o perfil no Deezer
-    * Card para o perfil na Apple Music
-* **Links para Redes Sociais:** Acesso rápido ao Instagram e Twitter/X no rodapé.
-* **Design Responsivo:** Otimizado para visualização em desktops, tablets e smartphones.
-* **Interatividade:** Efeitos de hover e animações sutis para uma experiência de usuário mais agradável.
+* **Hero Section Impactante:** Seção de boas-vindas com o logo de RIAN7X, título animado e um chamado para ação claro.
+* **Navegação Fixa e Responsiva:** Um menu de navegação que permanece no topo da página ao rolar, com links para as seções principais e um menu "sanduíche" funcional para dispositivos móveis.
+* **Seção "Gateways":** Três portais temáticos (Música, Games, SevenX) que direcionam os visitantes para as áreas de interesse.
+* **Seções de Conteúdo Dedicadas:** Blocos distintos e bem organizados para "Sobre Mim", "Novidades", "Plataformas Musicais" e "Canais do YouTube".
+* **Player do Spotify Incorporado:** Permite que os visitantes ouçam as músicas diretamente na página.
+* **Animações de Scroll:** Elementos e seções aparecem suavemente conforme o usuário rola a página, criando uma experiência mais dinâmica.
+* **Botões de Inscrição Direta:** Facilitam a inscrição nos canais do YouTube com um único clique.
+* **Ícones SVG para Redes Sociais:** Logos visuais para Instagram e Twitter/X no rodapé, melhorando a identificação.
 
 ## 💻 Tecnologias Utilizadas
 
 * **HTML5:** Estrutura semântica da página.
-* **Tailwind CSS:** Framework CSS para estilização rápida, responsiva e utilitária (utilizado via CDN).
+* **Tailwind CSS:** Framework CSS para estilização rápida e responsiva (utilizado via CDN).
+* **JavaScript:** Para interatividade, incluindo o menu mobile e as animações de scroll (Intersection Observer API).
 * **Google Fonts:** Fonte "Inter" para uma tipografia moderna e legível.
-* **SVG:** Para ícones nos botões e logos de plataformas (quando aplicável).
+* **SVG:** Para ícones nos botões e logos de plataformas.
 
 ## 🌐 Como Visualizar
 
