@@ -3,334 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RIAN7X Oficial - Versão 2.0</title>
-    <meta name="description" content="Página oficial de RIAN7X. Cantor, compositor e criador de conteúdo de jogos e música. Ouça minhas músicas no Spotify, Deezer e Apple Music. Conheça meus canais e redes sociais.">
+    <title>RIAN7X Oficial - Bem-vindo ao Meu Universo</title>
+    <meta name="description" content="Página oficial de RIAN7X. Explore meus universos de TRAP, games e o futuro com SevenX. Ouça minhas músicas e acompanhe meus canais.">
     <meta name="keywords" content="RIAN7X, RIAN7X Oficial, SevenX, música, jogos, cantor, compositor, criador de conteúdo, Marco Ce, YouTube, Instagram, Twitter, TRAP, Free Fire, FC Mobile, Spotify, Deezer, Apple Music">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --color-primary: #8b5cf6; /* violet-500 */
+            --color-secondary: #ec4899; /* pink-500 */
+            --color-tertiary: #f59e0b; /* amber-500 */
+            --color-background: #0f172a; /* slate-900 */
+            --color-surface: #1e293b; /* slate-800 */
+            --color-border: #334155; /* slate-700 */
+            --color-text-primary: #f1f5f9; /* slate-100 */
+            --color-text-secondary: #94a3b8; /* slate-400 */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Fundo base mais escuro (slate-900) */
-            color: #d1d5db; /* gray-300 */
+            background-color: var(--color-background);
+            color: var(--color-text-secondary);
         }
-        .hero-section {
-            padding: 4rem 1rem 3rem; /* Mais padding vertical */
+        .gradient-background::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.1), transparent 35%),
+                              radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.1), transparent 35%);
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
         }
-        .hero-title {
-            font-weight: 800; /* Extra-bold */
-            background: linear-gradient(to right, #8b5cf6, #ec4899, #f59e0b); /* Roxo, Rosa, Laranja */
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(10px, 20px); }
+            100% { transform: translate(0, 0); }
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-tertiary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .section-container {
-            padding: 3rem 1rem;
-            border-top: 1px solid #374151; /* gray-700 */
-        }
-        .section-container:first-of-type { /* A seção "Sobre Mim" não terá borda superior */
-            border-top: none;
-        }
         .section-title {
-            font-size: 2.25rem; /* text-4xl */
-            line-height: 2.5rem;
-            font-weight: 700; /* bold */
-            margin-bottom: 2rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
             text-align: center;
-            color: #f3f4f6; /* gray-100 - Cor base antes do gradiente JS */
+            color: var(--color-text-primary);
         }
-        .card-base {
-            background-color: #1f2937; /* slate-800 - Fundo do card mais sólido */
+        .card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
             border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2), 0 4px 6px -2px rgba(0,0,0,0.15); /* Sombra mais definida */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-            border: 1px solid #374151; /* Borda sutil slate-700 */
-            overflow: hidden; /* Para o iframe do Spotify e botões integrados */
-            display: flex; /* Para alinhar o botão no rodapé */
-            flex-direction: column; /* Para alinhar o botão no rodapé */
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%; /* Faz o card ocupar a altura total da célula do grid */
+            display: flex;
+            flex-direction: column;
         }
-        .card-base:hover {
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1);
+            border-color: var(--color-primary);
+        }
+        .card-base { /* Usado para os cards das plataformas e canais */
+            background-color: var(--color-surface);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2), 0 4px 6px -2px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+         .card-base:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3), 0 10px 10px -5px rgba(0,0,0,0.2);
         }
-        .card-content-padding {
-             padding: 1.5rem; /* p-6 */
-             flex-grow: 1; /* Faz o conteúdo ocupar o espaço disponível */
-        }
-        /* Cores de borda no hover */
         .card-base.jogos-card:hover { border-color: #a78bfa; }
         .card-base.sevenx-card:hover { border-color: #7dd3fc; }
         .card-base.musica-card:hover { border-color: #f472b6; }
-        .card-base.spotify-card { border-color: #1DB954; padding:0; } /* Sem padding para o iframe */
+        .card-base.spotify-card { border-color: #1DB954; padding:0; }
         .card-base.spotify-card:hover { border-color: #1ED760; }
         .card-base.deezer-card { border-color: #EF5466; }
         .card-base.deezer-card:hover { border-color: #FF7281; }
         .card-base.applemusic-card { border-color: #FA233E; }
         .card-base.applemusic-card:hover { border-color: #FF5C72; }
 
-        .profile-image {
-            object-fit: cover;
-            border: 2px solid #4b5563; /* gray-600 */
-            width: 6rem; /* w-24 */
-            height: 6rem; /* h-24 */
-            border-radius: 9999px; /* rounded-full */
-            margin-bottom: 1rem; /* mb-4 */
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-lg */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .platform-logo-container {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            border-radius: 9999px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            background-color: #374151; /* slate-700, um pouco mais claro que o card */
-        }
-        .platform-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 9999px;
-        }
-
-        .btn-primary {
+        .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            padding: 0.75rem 2rem;
+            border-radius: 9999px; /* rounded-full */
             font-weight: 600;
-            /* border-radius: 0.5rem;  Removido para integrar ao card */
             color: #ffffff;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-            text-align: center;
-            width: 100%; /* Ocupa toda a largura */
-            border-top-left-radius: 0; /* Remove arredondamento superior */
-            border-top-right-radius: 0; /* Remove arredondamento superior */
-            border-bottom-left-radius: 0.5rem; /* Mantém arredondamento inferior */
-            border-bottom-right-radius: 0.5rem; /* Mantém arredondamento inferior */
-            margin-top: auto; /* Empurra para o final do card */
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
         }
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            background-color: #7c3aed; /* violet-600 */
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
         }
-        .btn-purple { background-color: #7c3aed; }
-        .btn-purple:hover { background-color: #6d28d9; }
-        .btn-blue { background-color: #2563eb; }
-        .btn-blue:hover { background-color: #1d4ed8; }
-        .btn-pink { background-color: #db2777; }
-        .btn-pink:hover { background-color: #be185d; }
-        .btn-green { background-color: #16a34a; }
-        .btn-green:hover { background-color: #15803d; }
-        .btn-deezer { background-color: #EF5466; }
-        .btn-deezer:hover { background-color: #E52D41; }
-        .btn-apple { background-color: #FA233E; }
-        .btn-apple:hover { background-color: #E10E2A; }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+        .nav-link {
+            color: var(--color-text-secondary);
+        }
+        .nav-link:hover {
+            color: var(--color-text-primary);
+        }
+        .mobile-menu a {
+             display: block;
+             padding: 0.75rem 0;
+             font-size: 1.125rem; /* text-lg */
+             color: var(--color-text-secondary);
+        }
+         .mobile-menu a:hover {
+            color: var(--color-text-primary);
+         }
 
-        .subscribe-button {
-            background-color: #cc0000;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        /* Animações de Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .subscribe-button:hover {
-            background-color: #aa0000;
-            transform: scale(1.05) translateY(-1px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-
-        .social-link {
-            color: #9ca3af;
-            text-decoration: none;
-            display: inline-block;
-            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            font-size: 1.5rem; /* text-2xl */
-            padding: 0.5rem; /* p-2 */
-        }
-        .social-link:hover {
-            color: #e5e7eb;
-            transform: scale(1.1);
-        }
-        .footer {
-            border-top: 1px solid #374151;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        .news-section ul {
-            list-style-position: inside; /* Para os marcadores ficarem dentro do bloco */
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body>
+<body class="gradient-background">
 
-    <div class="container mx-auto px-4">
-        <header class="hero-section text-center">
-            <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl">RIAN7X</h1>
-            <p class="text-gray-400 mt-6 text-lg sm:text-xl max-w-2xl mx-auto">Artista de TRAP, criador de conteúdo e sonhador de Marco. Transformando batidas e gameplays em inspiração. Bem-vindo ao meu universo!</p>
-        </header>
+    <!-- Navegação -->
+    <nav class="sticky-nav">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="text-2xl font-bold text-gradient">RIAN7X</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#sobre" class="nav-link transition-colors duration-200">Sobre</a>
+                    <a href="#gateways" class="nav-link transition-colors duration-200">Universos</a>
+                    <a href="#plataformas" class="nav-link transition-colors duration-200">Músicas</a>
+                    <a href="#canais" class="nav-link transition-colors duration-200">Canais</a>
+                    <a href="#contato" class="nav-link transition-colors duration-200">Contato</a>
+                </div>
+                <!-- Botão do Menu Mobile -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#sobre" class="mobile-menu-link">Sobre</a>
+                <a href="#gateways" class="mobile-menu-link">Universos</a>
+                <a href="#plataformas" class="mobile-menu-link">Músicas</a>
+                <a href="#canais" class="mobile-menu-link">Canais</a>
+                <a href="#contato" class="mobile-menu-link">Contato</a>
+            </div>
+        </div>
+    </nav>
 
-        <section id="sobre" class="section-container about-section p-6 py-10 text-center">
-            <h2 class="section-title text-gradient-sky">Sobre Mim</h2>
-            <p class="text-gray-300 text-lg leading-relaxed">
-                Diretamente de Marco, RIAN7X! 🎤 Artista de TRAP e criador de conteúdo focado em Free Fire e FC Mobile. Com o objetivo de ser o maior cantor da cidade e levar nossa arte para o reconhecimento global, inspirando outros a sonharem alto. 🌟
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section text-center flex flex-col items-center justify-center min-h-[85vh] px-4 reveal">
+            <img src="Blue and White Modern Company Logo.jpg" alt="RIAN7X Logo" class="w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full shadow-2xl" onerror="this.onerror=null; this.src='https://placehold.co/150x150/ffffff/111827?text=R7X';">
+            <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black uppercase tracking-wider hero-title">RIAN7X</h1>
+            <p class="text-gray-300 mt-6 text-lg sm:text-xl max-w-2xl mx-auto">
+                De Marco para o mundo. Artista, gamer e criador.
             </p>
+            <a href="#gateways" class="btn btn-primary mt-10">Explorar Universos</a>
         </section>
 
-        <section id="novidades" class="section-container news-section p-6 py-10">
-            <h2 class="section-title text-gradient-pink-purple">Novidades e Próximos Lançamentos</h2>
-            <p class="text-gray-400">Fique ligado nas últimas novidades e nos meus próximos projetos!</p>
-            <ul class="mt-6 space-y-3 text-gray-300 list-disc inline-block text-left">
-                <li>🚀 Nova música em breve!</li>
-                <li>🎮 Série de gameplays insanas de FC Mobile toda sexta no canal!</li>
-                <li>🔥 O projeto SevenX está esquentando... grandes anúncios em breve!</li>
-            </ul>
-        </section>
-
-        <section id="inscricao" class="section-container py-10">
-            <h2 class="section-title text-gradient-red-orange">Inscreva-se!</h2>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="https://www.youtube.com/@Rian7xOfc2?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="subscribe-button">Canal de Jogos</a>
-                <a href="https://www.youtube.com/@7xSevenx?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="subscribe-button">SevenX</a>
-                <a href="https://www.youtube.com/@Rian7xOfc?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="subscribe-button">Canal de Música</a>
-            </div>
-        </section>
-
-        <section id="canais" class="section-container py-10">
-            <h2 class="section-title text-gradient-purple-pink">Meus Canais</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                <div class="card-base jogos-card">
-                    <div class="card-content-padding text-center">
-                        <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
-                        <h3 class="text-2xl font-semibold mb-3 text-purple-400">Canal de Jogos</h3>
-                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
-                            Gameplays épicas, dicas e muita diversão do universo dos games!
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/@Rian7xOfc2" target="_blank" rel="noopener noreferrer"
-                       class="btn-primary btn-purple py-4">
-                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                        <span>Visitar Canal</span>
-                    </a>
-                </div>
-
-                <div class="card-base sevenx-card">
-                    <div class="card-content-padding text-center">
-                        <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
-                        <h3 class="text-2xl font-semibold mb-3 text-blue-400">SevenX</h3>
-                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
-                            O futuro nois aguarda... e ele é grandioso.
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/@7xSevenx" target="_blank" rel="noopener noreferrer"
-                       class="btn-primary btn-blue py-4">
-                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                        <span>Acompanhar SevenX</span>
-                    </a>
-                </div>
-
-                <div class="card-base musica-card">
-                    <div class="card-content-padding text-center">
-                        <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
-                        <h3 class="text-2xl font-semibold mb-3 text-pink-400">Canal de Música</h3>
-                        <p class="text-gray-400 mb-6 text-sm min-h-[4rem]">
-                            Minhas composições, TRAPs, covers e a trilha sonora da jornada.
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/@Rian7xOfc" target="_blank" rel="noopener noreferrer"
-                       class="btn-primary btn-pink py-4">
-                         <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                        <span>Ouvir no YouTube</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="plataformas" class="section-container py-10">
-            <h2 class="section-title text-gradient-green-teal">Ouça Minhas Músicas</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                <div class="card-base spotify-card">
-                    <iframe style="border-radius:0.75rem;" src="https://open.spotify.com/embed/artist/0HdsNGdAYF3Zg3aJRuhmno?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-
-                <div class="card-base deezer-card">
-                    <div class="card-content-padding text-center">
-                        <div class="platform-logo-container mx-auto" style="background-color: #1f2937;">
-                             <img src="https://play-lh.googleusercontent.com/F9uslCD68SA59MsRuLJ4vT0o1a6WccmFufSRtfCaIg12K45jySvUqOViLWNSURq-NXyE" alt="Logo Deezer" class="platform-img" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EF5466/FFFFFF?text=🎶&fontsize=40';">
+        <!-- Seção "Gateways" -->
+        <section id="gateways" class="section-container">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Portal Música -->
+                    <a href="#plataformas" class="card text-center reveal">
+                        <div class="mb-4 text-pink-400">
+                            <svg class="w-12 h-12 md:w-16 md:h-16 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg>
                         </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Universo Musical</h3>
+                        <p class="text-sm">Explore minhas composições de TRAP, covers e a trilha sonora da minha jornada nas principais plataformas de streaming.</p>
+                    </a>
+                    <!-- Portal Games -->
+                    <a href="#canais" class="card text-center reveal" style="transition-delay: 150ms;">
+                         <div class="mb-4 text-purple-400">
+                            <svg class="w-12 h-12 md:w-16 md:h-16 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Universo Gamer</h3>
+                        <p class="text-sm">Acompanhe gameplays épicas de Free Fire, FC Mobile e outras aventuras nos meus canais do YouTube.</p>
+                    </a>
+                    <!-- Portal SevenX (combinando 2 colunas no tablet) -->
+                    <a href="#canais" class="card text-center reveal md:col-span-2 lg:col-span-1" style="transition-delay: 300ms;">
+                        <div class="mb-4 text-sky-400">
+                            <svg class="w-12 h-12 md:w-16 md:h-16 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Universo SevenX</h3>
+                        <p class="text-sm">O futuro é construído agora. Um projeto misterioso e grandioso. Fique por dentro e acompanhe a evolução.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="section-container reveal">
+             <div class="about-section p-8 text-center" style="max-width: 800px;">
+                <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl text-gradient-sky">Sobre Mim</h2>
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+                    Diretamente de Marco, RIAN7X! 🎤 Artista de TRAP e criador de conteúdo focado em Free Fire e FC Mobile. Com o objetivo de ser o maior cantor da cidade e levar nossa arte para o reconhecimento global, inspirando outros a sonharem alto. 🌟
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção Novidades -->
+        <section id="novidades" class="section-container reveal">
+             <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl text-gradient-pink-purple">Novidades</h2>
+             <div class="max-w-2xl mx-auto bg-slate-800 p-8 rounded-lg shadow-lg">
+                 <ul class="space-y-4 text-gray-300 list-disc list-inside text-left">
+                    <li>🚀 <span class="font-semibold text-white">Nova música "Visão de Futuro"</span> chegando este mês! Fiquem atentos às minhas redes sociais para a data de lançamento.</li>
+                    <li>🎮 <span class="font-semibold text-white">Série de gameplays insanas</span> de FC Mobile toda sexta no canal!</li>
+                    <li>🔥 <span class="font-semibold text-white">O projeto SevenX</span> está esquentando... grandes anúncios em breve!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção Plataformas Musicais -->
+        <section id="plataformas" class="section-container reveal">
+            <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl text-gradient-green-teal">Ouça Minhas Músicas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="card-base spotify-card">
+                    <iframe style="border-radius:0.75rem;" src="https://open.spotify.com/embed/artist/0HdsNGdAYF3Zg3aJRuhmno?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="card-base deezer-card p-6 flex flex-col items-center text-center">
+                     <div class="platform-logo-container mx-auto" style="background-color: #1f2937;">
+                         <img src="https://play-lh.googleusercontent.com/F9uslCD68SA59MsRuLJ4vT0o1a6WccmFufSRtfCaIg12K45jySvUqOViLWNSURq-NXyE" alt="Logo Deezer" class="platform-img" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EF5466/FFFFFF?text=🎶&fontsize=40';">
+                    </div>
+                    <div class="flex-grow">
                         <h3 class="text-2xl font-semibold mb-3" style="color: #EF5466;">Deezer</h3>
-                        <p class="text-gray-400 mb-6 text-sm min-h-[2rem]">
+                        <p class="text-gray-400 mb-6 text-sm">
                             Todas as minhas músicas também disponíveis no Deezer.
                         </p>
                     </div>
-                    <a href="https://dzr.page.link/V86qtZ8Bi8Dzrz4P8" target="_blank" rel="noopener noreferrer"
-                       class="btn-primary btn-deezer py-4">
-                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                        <span>Ouvir no Deezer</span>
-                    </a>
+                    <a href="https://dzr.page.link/V86qtZ8Bi8Dzrz4P8" target="_blank" rel="noopener noreferrer" class="btn btn-deezer mt-auto">Ouvir no Deezer</a>
                 </div>
-
-                <div class="card-base applemusic-card">
-                    <div class="card-content-padding text-center">
-                         <div class="platform-logo-container mx-auto" style="background-color: #000000;">
-                            <img src="https://help.apple.com/assets/679AD7334ADC9F385B08BC10/679AD73481880455AD0B6174/pt_BR/14afc11a08e3fe617b2404ee08a0d0af.png" alt="Logo Apple Music" class="platform-img" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FA233E/FFFFFF?text=🎵&fontsize=40';">
-                        </div>
+                <div class="card-base applemusic-card p-6 flex flex-col items-center text-center">
+                    <div class="platform-logo-container mx-auto" style="background-color: #000000;">
+                        <img src="https://help.apple.com/assets/679AD7334ADC9F385B08BC10/679AD73481880455AD0B6174/pt_BR/14afc11a08e3fe617b2404ee08a0d0af.png" alt="Logo Apple Music" class="platform-img" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FA233E/FFFFFF?text=🎵&fontsize=40';">
+                    </div>
+                    <div class="flex-grow">
                         <h3 class="text-2xl font-semibold mb-3" style="color: #FA233E;">Apple Music</h3>
-                        <p class="text-gray-400 mb-6 text-sm min-h-[2rem]">
+                        <p class="text-gray-400 mb-6 text-sm">
                             Encontre minhas faixas na Apple Music.
                         </p>
                     </div>
-                    <a href="https://music.apple.com/br/artist/rian7x/1816869659" target="_blank" rel="noopener noreferrer"
-                       class="btn-primary btn-apple py-4">
-                        <svg xmlns="https://www.youtube.com/embed/L_jWHffIx5E8" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M8 5v14l11-7z"></path></svg>
-                        <span>Ouvir na Apple Music</span>
-                    </a>
+                    <a href="https://music.apple.com/br/artist/rian7x/1816869659" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-apple mt-auto">Ouvir na Apple Music</a>
                 </div>
             </div>
         </section>
 
-        <footer class="footer">
-            <div class="mb-6 text-center">
-                <a href="https://www.instagram.com/rian7xofc/" target="_blank" rel="noopener noreferrer" class="social-link">📸</a>
-                <a href="https://x.com/Rian7xOfc" target="_blank" rel="noopener noreferrer" class="social-link">🐦</a>
+        <!-- Seção Canais do YouTube -->
+        <section id="canais" class="section-container reveal">
+            <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl text-gradient-purple-pink">Meus Canais</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                 <div class="card-base jogos-card p-6 flex flex-col items-center text-center">
+                    <img src="https://yt3.googleusercontent.com/BLaqXCTL-dNx8gWpXEG79U4WTZ--U3UEjTaHkwY47hX7BNGns_DiK8yQcd7a2z_kRBO14xPYOLA=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Jogos" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7E22CE/FFFFFF?text=🎮&fontsize=16';">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-400">Canal de Jogos</h3>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            Gameplays épicas, dicas e muita diversão do universo dos games!
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/@Rian7xOfc2?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-purple mt-auto">Inscreva-se</a>
+                </div>
+                 <div class="card-base sevenx-card p-6 flex flex-col items-center text-center">
+                    <img src="https://yt3.googleusercontent.com/ZkotI8m5PINyfZmhXhcC47pvZbXiRA_oMQP1jbhVA23eSgMNfxYB2cl5u8QpHqRbZ80aOBaYQQ=s160-c-k-c0x00ffffff-no-rj" alt="Ícone SevenX" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/60A5FA/FFFFFF?text=S&fontsize=40';">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-400">SevenX</h3>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            O futuro nois aguarda... e ele é grandioso.
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/@7xSevenx?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-blue mt-auto">Acompanhar</a>
+                </div>
+                <div class="card-base musica-card p-6 flex flex-col items-center text-center">
+                    <img src="https://yt3.googleusercontent.com/RJb0LfbnB7Ydjs0-eVPWikPQIoy0kqvBMZForziv9wdD1_jCTURzJwZOkcsJ6zrEbFngOaNzag=s160-c-k-c0x00ffffff-no-rj" alt="Ícone Canal de Música" class="profile-image" onerror="this.onerror=null; this.src='https://placehold.co/100x100/EC4899/FFFFFF?text=🎵&fontsize=16';">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-3 text-pink-400">Canal de Música</h3>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            Minhas composições, TRAPs, covers e a trilha sonora da jornada.
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/@Rian7xOfc?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-pink mt-auto">Inscreva-se</a>
+                </div>
             </div>
-            <p class="text-xs text-gray-500 mb-3 text-center">(Instagram privado por enquanto, logo ficará público!)</p>
-            <p class="text-gray-400 text-sm text-center">
+        </section>
+
+        <footer id="contato" class="footer">
+            <div class="mb-4">
+                <p class="text-lg font-semibold text-white">Siga-me nas redes</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/rian7xofc/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.053 1.905.246 2.597.523.698.28 1.228.61 1.752 1.134.524.524.854 1.055 1.134 1.752.277.692.47 1.427.523 2.597.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.053 1.17-.246 1.905-.523 2.597-.28.698-.61 1.228-1.134 1.752s-1.055.854-1.752 1.134c-.692.277-1.427.47-2.597.523-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.053-1.905-.246-2.597-.523-.698-.28-1.228-.61-1.752-1.134s-.854-1.055-1.134-1.752c-.277-.692-.47-1.427-.523-2.597-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.053-1.17.246-1.905.523-2.597.28-.698.61-1.228 1.134-1.752s1.055-.854 1.752-1.134c.692-.277 1.427-.47 2.597-.523C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.742 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.784.297-1.465.708-2.126 1.37C1.353 2.663.942 3.344.645 4.128.347 4.893.147 5.763.088 7.041 0 8.321 0 8.73 0 12s0 3.679.088 4.959c.059 1.278.259 2.148.557 2.913.297.784.708 1.465 1.37 2.126.661.661 1.342 1.072 2.126 1.37.765.297 1.635.498 2.913.557C8.333 23.986 8.742 24 12 24s3.679 0 4.959-.088c1.278-.059 2.148-.259 2.913-.557.784-.297 1.465-.708 2.126-1.37.661-.661 1.072-1.342 1.37-2.126.297-.765.498-1.635.557-2.913.088-1.28.088-1.689.088-4.959s0-3.679-.088-4.959c-.059-1.278-.259-2.148-.557-2.913-.297-.784-.708-1.465-1.37-2.126C21.337 2.663 20.656.942 19.872.645c-.765-.297-1.635-.498-2.913-.557C15.679.014 15.258 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 100-2.882 1.441 1.441 0 000 2.882z"></path></svg>
+                </a>
+                <a href="https://x.com/Rian7xOfc" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Twitter/X">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                </a>
+            </div>
+            <p class="text-gray-400 text-sm">
                 © <span id="currentYear"></span> RIAN7X. Todos os direitos reservados.
             </p>
-            <p class="text-gray-500 text-xs mt-1 text-center">
-                Feito com ❤️ e Tailwind CSS.
+            <p class="text-gray-500 text-xs mt-1">
+                Design V3.1
             </p>
         </footer>
-    </div>
+    </main>
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Animação de Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Funcionalidade do Menu Mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fecha o menu quando um link é clicado (útil para navegação na mesma página)
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
         // Gradientes de texto para títulos de seção
         document.querySelectorAll('.section-title').forEach(title => {
             let gradientStyle = '';
             if (title.classList.contains('text-gradient-sky')) {
-                gradientStyle = 'linear-gradient(to right, #38bdf8, #06b6d4)'; /* sky-400 to cyan-500 */
+                gradientStyle = 'linear-gradient(to right, #38bdf8, #06b6d4)';
             } else if (title.classList.contains('text-gradient-pink-purple')) {
-                gradientStyle = 'linear-gradient(to right, #ec4899, #a855f7)'; /* pink-500 to purple-500 */
+                gradientStyle = 'linear-gradient(to right, #ec4899, #a855f7)';
             } else if (title.classList.contains('text-gradient-red-orange')) {
-                 gradientStyle = 'linear-gradient(to right, #ef4444, #f97316)'; /* red-500 to orange-500 */
+                 gradientStyle = 'linear-gradient(to right, #ef4444, #f97316)';
             } else if (title.classList.contains('text-gradient-green-teal')) {
-                 gradientStyle = 'linear-gradient(to right, #22c55e, #14b8a6)'; /* green-500 to teal-500 */
-            } else if (title.classList.contains('text-gradient-purple-pink')) { // Gradiente para "Meus Canais"
-                 gradientStyle = 'linear-gradient(to right, #a78bfa, #ec4899)'; /* purple-400 to pink-500 */
+                 gradientStyle = 'linear-gradient(to right, #22c55e, #14b8a6)';
+            } else if (title.classList.contains('text-gradient-purple-pink')) {
+                 gradientStyle = 'linear-gradient(to right, #a78bfa, #ec4899)';
             }
 
             if (gradientStyle) {
