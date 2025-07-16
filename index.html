@@ -34,57 +34,105 @@
         .link-button:hover {
             transform: translateY(-4px) scale(1.02);
         }
+        /* Container responsivo para o vídeo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
-<body class="gradient-bg text-white min-h-screen flex items-center justify-center p-4">
+<body class="gradient-bg text-white">
 
-    <div class="w-full max-w-md mx-auto">
+    <div class="w-full max-w-xl mx-auto p-4 sm:p-6">
         
-        <header class="text-center mb-8">
+        <header class="text-center mb-6 md:mb-8">
             <!-- IMAGEM DE PERFIL -->
             <img 
                 src="https://yt3.googleusercontent.com/D1t53q6L3wyo53tECI6b1fH5vHPIZL3txJyKHl5CdsZj0vKI17CgTuMn4-8nKWZa5TMwK901s7A=s160-c-k-c0x00ffffff-no-rj" 
                 alt="Foto de perfil de Rian 7x" 
-                class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg object-cover"
+                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg object-cover"
                 onerror="this.onerror=null;this.src='https://placehold.co/200x200/CCCCCC/FFFFFF?text=Erro';"
             >
             
             <!-- NOME DO ARTISTA -->
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight">Rian 7x</h1>
+            <h1 class="text-4xl sm:text-5xl font-black tracking-tight">Rian 7x</h1>
             
             <!-- BIOGRAFIA -->
-            <p class="text-gray-400 mt-2 text-lg">Ouça minhas músicas nas principais plataformas.</p>
+            <p class="text-gray-400 mt-2 text-base sm:text-lg">Ouça minhas músicas nas principais plataformas.</p>
         </header>
 
         <main>
+            <!-- SEÇÃO DO VÍDEO PRINCIPAL -->
+            <div class="mb-8 md:mb-10">
+                <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 tracking-tight">Música em Destaque</h2>
+                <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <iframe 
+                        src="https://www.youtube.com/embed/-OxjLgWYfxM" 
+                        title="Rian 7x - Tempo Novo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                 <p class="text-center text-gray-400 mt-2 text-sm sm:text-base">Tempo Novo</p>
+            </div>
+
+            <!-- SEÇÃO DE OUTRAS MÚSICAS -->
+            <div class="mb-8 md:mb-10">
+                <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 tracking-tight">Outras Músicas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Vídeo 1 -->
+                    <div>
+                        <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                            <iframe src="https://www.youtube.com/embed/hooetif2Pf0" title="Rian 7x - Oh Garota slowed+reverb" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-2 text-sm">Oh Garota slowed+reverb</p>
+                    </div>
+                    <!-- Vídeo 2 -->
+                    <div>
+                        <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                            <iframe src="https://www.youtube.com/embed/dYwUz-IKihg" title="Rian 7x - Oh Garota" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-2 text-sm">Oh Garota</p>
+                    </div>
+                    <!-- Vídeo 3 -->
+                    <div>
+                        <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                            <iframe src="https://www.youtube.com/embed/9_HxuV-jrjQ" title="Rian 7x - Ei Menina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-2 text-sm">Ei Menina</p>
+                    </div>
+                    <!-- Vídeo 4 -->
+                    <div>
+                        <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                            <iframe src="https://www.youtube.com/embed/CZtNgGBvnUM" title="Rian 7x - Pra Sempre Te amar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center text-gray-400 mt-2 text-sm">Pra Sempre Te amar</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DOS LINKS -->
             <div class="space-y-4">
-                <!-- LINK SPOTIFY -->
-                <a href="https://open.spotify.com/artist/0HdsNGdAYF3Zg3aJRuhmno" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-500/90 hover:bg-green-500 text-white font-bold py-4 px-6 rounded-lg shadow-md">
-                    <i class="fab fa-spotify fa-lg mr-4"></i>
-                    <span>Ouvir no Spotify</span>
-                </a>
-
-                <!-- LINK YOUTUBE -->
-                <a href="https://youtube.com/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-red-600/90 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-lg shadow-md">
-                    <i class="fab fa-youtube fa-lg mr-4"></i>
-                    <span>Ver no YouTube</span>
-                </a>
-
-                <!-- LINK AMAZON MUSIC -->
-                <a href="https://music.amazon.com.br/artists/B0F9YPX7CL" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-400/90 hover:bg-blue-400 text-white font-bold py-4 px-6 rounded-lg shadow-md">
-                    <i class="fa-solid fa-music fa-lg mr-4"></i>
-                    <span>Ouvir na Amazon Music</span>
-                </a>
-
-                <!-- LINK DEEZER -->
-                <a href="https://link.deezer.com/s/30swZ7rYnHqH7CjkMXY8x" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-800/90 hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-lg shadow-md">
-                    <i class="fab fa-deezer fa-lg mr-4"></i>
-                    <span>Ouvir no Deezer</span>
-                </a>
+                <a href="https://open.spotify.com/artist/0HdsNGdAYF3Zg3aJRuhmno" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-500/90 hover:bg-green-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-spotify fa-lg mr-4"></i><span>Ouvir no Spotify</span></a>
+                <a href="https://youtube.com/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-red-600/90 hover:bg-red-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-youtube fa-lg mr-4"></i><span>Ver no YouTube</span></a>
+                <a href="https://music.amazon.com.br/artists/B0F9YPX7CL" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-400/90 hover:bg-blue-400 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fa-solid fa-music fa-lg mr-4"></i><span>Ouvir na Amazon Music</span></a>
+                <a href="https://link.deezer.com/s/30swZ7rYnHqH7CjkMXY8x" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-800/90 hover:bg-gray-700 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-deezer fa-lg mr-4"></i><span>Ouvir no Deezer</span></a>
             </div>
         </main>
 
-        <footer class="text-center mt-12">
+        <footer class="text-center mt-10 md:mt-12">
             <p class="text-gray-500 text-sm">&copy; <span id="year"></span> Rian 7x. Todos os direitos reservados.</p>
         </footer>
     </div>
