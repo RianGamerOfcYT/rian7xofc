@@ -48,8 +48,8 @@
             background-image: radial-gradient(at 80% 20%, hsla(28,90%,50%,0.1) 0px, transparent 50%),
                               radial-gradient(at 20% 90%, hsla(210,90%,50%,0.1) 0px, transparent 50%);
         }
-        .link-button { transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; }
-        .link-button:hover { transform: translateY(-4px) scale(1.02); }
+        .link-button, .video-wrapper { transition: transform 0.3s ease; }
+        .link-button:hover, .video-wrapper:hover { transform: translateY(-4px); }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background-color: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .instagram-gradient { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
@@ -91,13 +91,13 @@
       "track": [
         {
           "@type": "MusicRecording",
-          "name": "Tempo Novo",
-          "url": "https://www.youtube.com/watch?v=-OxjLgWYfxM"
+          "name": "São Miguel Arcanjo Speedup",
+          "url": "https://www.youtube.com/watch?v=sHUuFFlLEoA"
         },
         {
           "@type": "MusicRecording",
-          "name": "Oh Garota",
-          "url": "https://www.youtube.com/watch?v=dYwUz-IKihg"
+          "name": "Tempo Novo",
+          "url": "https://www.youtube.com/watch?v=-OxjLgWYfxM"
         }
       ]
     }
@@ -105,9 +105,9 @@
 </head>
 <body class="gradient-bg text-white">
 
-    <div class="w-full max-w-xl mx-auto p-4 sm:p-6">
+    <div class="w-full max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
         
-        <header class="text-center mb-6 md:mb-8">
+        <header class="text-center mb-8 md:mb-12">
             <!-- IMAGEM DE PERFIL -->
             <img 
                 src="https://yt3.googleusercontent.com/D1t53q6L3wyo53tECI6b1fH5vHPIZL3txJyKHl5CdsZj0vKI17CgTuMn4-8nKWZa5TMwK901s7A=s160-c-k-c0x00ffffff-no-rj" 
@@ -117,121 +117,103 @@
             >
             
             <!-- NOME DO ARTISTA -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">Rian 7x</h1>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">Rian 7x</h1>
             
             <!-- BIOGRAFIA -->
-            <p class="text-gray-400 mt-2 text-sm sm:text-base">Ouça minhas músicas nas principais plataformas.</p>
+            <p class="text-gray-400 mt-2 text-base sm:text-lg max-w-xl mx-auto">Ouça minhas músicas nas principais plataformas.</p>
         </header>
 
         <main>
             <!-- SEÇÃO DO VÍDEO PRINCIPAL -->
-            <div class="mb-6 sm:mb-8 md:mb-10">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Música em Destaque</h2>
-                <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <iframe 
-                        src="https://www.youtube.com/embed/-OxjLgWYfxM" 
-                        title="Rian 7x - Tempo Novo" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                 <p class="text-center text-white mt-2 text-sm sm:text-base font-semibold">Tempo Novo</p>
-            </div>
-
-            <!-- SEÇÃO DE ÁLBUNS EM DESTAQUE -->
-            <div class="mb-6 sm:mb-8 md:mb-10">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Álbuns em Destaque</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <!-- Álbum 1: Tempo Novo -->
-                    <div>
-                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/54RgrGeSxSdyoTcneJ62NT?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <section class="mb-10 sm:mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 tracking-tight">Música em Destaque</h2>
+                <div class="max-w-3xl mx-auto video-wrapper">
+                    <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                        <iframe 
+                            src="https://www.youtube.com/embed/sHUuFFlLEoA" 
+                            title="Rian 7x - São Miguel Arcanjo Speedup" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    <!-- Álbum 2: Noites Eternas -->
-                    <div>
-                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6fE6p3YveQpkdNIM7zo0Bt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
+                    <p class="text-center text-white mt-3 text-base sm:text-lg font-semibold">São Miguel Arcanjo Speedup</p>
                 </div>
-            </div>
-
-            <!-- SEÇÃO DE PLAYLIST -->
-            <div class="mb-6 sm:mb-8 md:mb-10">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Minha Playlist</h2>
-                <div class="rounded-lg overflow-hidden shadow-lg border border-gray-800">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6xJQUDWw2tsFidGSJieqyf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
+            </section>
 
             <!-- SEÇÃO DE OUTRAS MÚSICAS -->
-            <div class="mb-6 sm:mb-8 md:mb-10">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Outras Músicas</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <section class="mb-10 sm:mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 tracking-tight">Outras Músicas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Vídeo 1 -->
-                    <div>
+                    <div class="video-wrapper">
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/hooetif2Pf0" title="Rian 7x - Oh Garota slowed+reverb" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-white mt-2 text-sm font-semibold">Oh Garota slowed+reverb</p>
+                        <p class="text-center text-white mt-3 text-sm font-semibold">Oh Garota slowed+reverb</p>
                     </div>
                     <!-- Vídeo 2 -->
-                    <div>
+                    <div class="video-wrapper">
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/dYwUz-IKihg" title="Rian 7x - Oh Garota" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-white mt-2 text-sm font-semibold">Oh Garota</p>
+                        <p class="text-center text-white mt-3 text-sm font-semibold">Oh Garota</p>
                     </div>
                     <!-- Vídeo 3 -->
-                    <div>
+                    <div class="video-wrapper">
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/9_HxuV-jrjQ" title="Rian 7x - Ei Menina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-white mt-2 text-sm font-semibold">Ei Menina</p>
+                        <p class="text-center text-white mt-3 text-sm font-semibold">Ei Menina</p>
                     </div>
                     <!-- Vídeo 4 -->
-                    <div>
+                    <div class="video-wrapper">
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/CZtNgGBvnUM" title="Rian 7x - Te Amar Agora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-white mt-2 text-sm font-semibold">Te Amar Agora</p>
+                        <p class="text-center text-white mt-3 text-sm font-semibold">Te Amar Agora</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- SEÇÃO DOS LINKS -->
-            <div class="mb-6 sm:mb-8 md:mb-10 space-y-4">
-                <a href="https://open.spotify.com/artist/0HdsNGdAYF3Zg3aJRuhmno" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-500/90 hover:bg-green-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-spotify fa-lg mr-4"></i><span>Ouvir no Spotify</span></a>
-                <a href="https://youtube.com/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-red-600/90 hover:bg-red-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-youtube fa-lg mr-4"></i><span>Ver no YouTube</span></a>
-                <a href="https://music.amazon.com.br/artists/B0F9YPX7CL" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-400/90 hover:bg-blue-400 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fa-solid fa-music fa-lg mr-4"></i><span>Ouvir na Amazon Music</span></a>
-                <a href="https://link.deezer.com/s/30swZ7rYnHqH7CjkMXY8x" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-800/90 hover:bg-gray-700 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-deezer fa-lg mr-4"></i><span>Ouvir no Deezer</span></a>
-                <a href="https://www.facebook.com/people/Rian7x/61578222936848/" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-600/90 hover:bg-blue-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-facebook fa-lg mr-4"></i><span>Seguir no Facebook</span></a>
-                <a href="https://x.com/Rian7xOfc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-black/90 hover:bg-black text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-x-twitter fa-lg mr-4"></i><span>Seguir no X</span></a>
-                <a href="https://www.instagram.com/sevenxoficial7x/" target="_blank" rel="noopener noreferrer" class="link-button instagram-gradient flex items-center justify-center w-full text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-instagram fa-lg mr-4"></i><span>Instagram (Sevenx)</span></a>
-                <a href="https://www.instagram.com/rian7xofc/" target="_blank" rel="noopener noreferrer" class="link-button instagram-gradient flex items-center justify-center w-full text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-instagram fa-lg mr-4"></i><span>Instagram (Rian 7x)</span></a>
-                <a href="https://www.threads.net/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-900/90 hover:bg-black text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fa-solid fa-at fa-lg mr-4"></i><span>Seguir no Threads</span></a>
-                <a href="https://t.me/rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-sky-500/90 hover:bg-sky-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-telegram fa-lg mr-4"></i><span>Canal no Telegram</span></a>
-                <a href="https://wa.me/c/558896968831" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-600/90 hover:bg-green-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-whatsapp fa-lg mr-4"></i><span>Catálogo de Produtos</span></a>
-                <a href="https://whatsapp.com/channel/0029Vb6RxgvJ3jus5szLC50r" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-teal-500/90 hover:bg-teal-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-whatsapp fa-lg mr-4"></i><span>Canal no WhatsApp</span></a>
-            </div>
+            <section class="mb-10 sm:mb-12 md:mb-16">
+                 <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 tracking-tight">Redes e Plataformas</h2>
+                <div class="max-w-md mx-auto space-y-4">
+                    <a href="https://open.spotify.com/artist/0HdsNGdAYF3Zg3aJRuhmno" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-500/90 hover:bg-green-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-spotify fa-lg mr-4"></i><span>Ouvir no Spotify</span></a>
+                    <a href="https://youtube.com/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-red-600/90 hover:bg-red-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-youtube fa-lg mr-4"></i><span>Ver no YouTube</span></a>
+                    <a href="https://music.amazon.com.br/artists/B0F9YPX7CL" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-400/90 hover:bg-blue-400 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fa-solid fa-music fa-lg mr-4"></i><span>Ouvir na Amazon Music</span></a>
+                    <a href="https://link.deezer.com/s/30swZ7rYnHqH7CjkMXY8x" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-800/90 hover:bg-gray-700 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-deezer fa-lg mr-4"></i><span>Ouvir no Deezer</span></a>
+                    <a href="https://www.facebook.com/people/Rian7x/61578222936848/" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-600/90 hover:bg-blue-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-facebook fa-lg mr-4"></i><span>Seguir no Facebook</span></a>
+                    <a href="https://x.com/Rian7xOfc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-black/90 hover:bg-black text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-x-twitter fa-lg mr-4"></i><span>Seguir no X</span></a>
+                    <a href="https://www.instagram.com/sevenxoficial7x/" target="_blank" rel="noopener noreferrer" class="link-button instagram-gradient flex items-center justify-center w-full text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-instagram fa-lg mr-4"></i><span>Instagram (Sevenx)</span></a>
+                    <a href="https://www.instagram.com/rian7xofc/" target="_blank" rel="noopener noreferrer" class="link-button instagram-gradient flex items-center justify-center w-full text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-instagram fa-lg mr-4"></i><span>Instagram (Rian 7x)</span></a>
+                    <a href="https://www.threads.net/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-900/90 hover:bg-black text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fa-solid fa-at fa-lg mr-4"></i><span>Seguir no Threads</span></a>
+                    <a href="https://t.me/rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-sky-500/90 hover:bg-sky-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-telegram fa-lg mr-4"></i><span>Canal no Telegram</span></a>
+                    <a href="https://wa.me/c/558896968831" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-600/90 hover:bg-green-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-whatsapp fa-lg mr-4"></i><span>Catálogo de Produtos</span></a>
+                    <a href="https://whatsapp.com/channel/0029Vb6RxgvJ3jus5szLC50r" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-teal-500/90 hover:bg-teal-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-whatsapp fa-lg mr-4"></i><span>Canal no WhatsApp</span></a>
+                </div>
+            </section>
 
             <!-- SEÇÃO DE CONTATO -->
-            <div class="mb-6 sm:mb-8 md:mb-10 text-center">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 tracking-tight">Contato Profissional</h2>
-                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-5 sm:p-6 max-w-md mx-auto">
+            <section class="mb-6 sm:mb-8 md:mb-10 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 tracking-tight">Contato Profissional</h2>
+                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-6 sm:p-8 max-w-md mx-auto">
                     <p class="text-gray-300 mb-4">Entre em contato para:</p>
-                    <ul class="text-left space-y-2 mb-6">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✅</span> Shows & Eventos</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✅</span> Parcerias & Collabs</li>
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✅</span> Divulgação & Mídia</li>
+                    <ul class="text-left space-y-3 mb-6">
+                        <li class="flex items-center"><span class="text-green-400 mr-3">✅</span> Shows & Eventos</li>
+                        <li class="flex items-center"><span class="text-green-400 mr-3">✅</span> Parcerias & Collabs</li>
+                        <li class="flex items-center"><span class="text-green-400 mr-3">✅</span> Divulgação & Mídia</li>
                     </ul>
                     <a href="mailto:sevenxoficial777@gmail.com" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-200">
                         <i class="fas fa-envelope mr-2"></i> Enviar E-mail
                     </a>
                 </div>
-            </div>
+            </section>
 
         </main>
 
-        <footer class="text-center mt-8 md:mt-10">
+        <footer class="text-center mt-8 md:mt-12">
             <p class="text-gray-500 text-sm">&copy; <span id="year"></span> Rian 7x. Todos os direitos reservados.</p>
         </footer>
     </div>
