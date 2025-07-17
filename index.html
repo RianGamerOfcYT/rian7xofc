@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rian 7x - Perfil Oficial</title>
     
+    <!-- SEO: Título da Página -->
+    <title>Rian 7x | Site Oficial | Músicas, Álbuns e Contato</title>
+    
+    <!-- SEO: Descrição para os motores de busca -->
+    <meta name="description" content="Página oficial do artista Rian 7x. Ouça os álbuns 'Tempo Novo' e 'Noites Eternas', assista aos clipes, confira a playlist e entre em contato para shows e parcerias.">
+    
+    <!-- SEO: Palavras-chave -->
+    <meta name="keywords" content="Rian 7x, Sevenx, música, trap, rap, artista, Spotify, YouTube, Deezer, Amazon Music, Tempo Novo, Noites Eternas, X, Twitter">
+    
+    <!-- SEO: URL Canônica - Substitua pelo seu domínio quando tiver um -->
+    <link rel="canonical" href="https://SEU_DOMINIO_AQUI.com">
+    
+    <!-- SEO: Open Graph Tags para compartilhamento em redes sociais (Facebook, WhatsApp, etc.) -->
+    <meta property="og:title" content="Rian 7x | Site Oficial">
+    <meta property="og:description" content="Ouça os álbuns, assista aos clipes e entre em contato com Rian 7x.">
+    <meta property="og:image" content="https://yt3.googleusercontent.com/D1t53q6L3wyo53tECI6b1fH5vHPIZL3txJyKHl5CdsZj0vKI17CgTuMn4-8nKWZa5TMwK901s7A=s160-c-k-c0x00ffffff-no-rj">
+    <meta property="og:url" content="https://SEU_DOMINIO_AQUI.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- SEO: Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rian 7x | Site Oficial">
+    <meta name="twitter:description" content="Ouça os álbuns, assista aos clipes e entre em contato com Rian 7x.">
+    <meta name="twitter:image" content="https://yt3.googleusercontent.com/D1t53q6L3wyo53tECI6b1fH5vHPIZL3txJyKHl5CdsZj0vKI17CgTuMn4-8nKWZa5TMwK901s7A=s160-c-k-c0x00ffffff-no-rj">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -14,43 +39,67 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Define a fonte Inter como padrão */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Efeito de gradiente sutil no fundo */
+        body { font-family: 'Inter', sans-serif; }
         .gradient-bg {
             background-color: #121212;
             background-image: radial-gradient(at 80% 20%, hsla(28,90%,50%,0.1) 0px, transparent 50%),
                               radial-gradient(at 20% 90%, hsla(210,90%,50%,0.1) 0px, transparent 50%);
         }
-        /* Estilo customizado para os botões com transição */
-        .link-button {
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
-        .link-button:hover {
-            transform: translateY(-4px) scale(1.02);
-        }
-        /* Container responsivo para o vídeo */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background-color: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .link-button { transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; }
+        .link-button:hover { transform: translateY(-4px) scale(1.02); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background-color: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .instagram-gradient { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .instagram-gradient:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); filter: brightness(1.1); }
     </style>
+    
+    <!-- SEO: JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Rian 7x",
+      "url": "https://SEU_DOMINIO_AQUI.com",
+      "image": "https://yt3.googleusercontent.com/D1t53q6L3wyo53tECI6b1fH5vHPIZL3txJyKHl5CdsZj0vKI17CgTuMn4-8nKWZa5TMwK901s7A=s160-c-k-c0x00ffffff-no-rj",
+      "sameAs": [
+        "https://open.spotify.com/artist/0HdsNGdAYF3Zg3aJRuhmno",
+        "https://youtube.com/@rian7xofc",
+        "https://music.amazon.com.br/artists/B0F9YPX7CL",
+        "https://link.deezer.com/s/30swZ7rYnHqH7CjkMXY8x",
+        "https://www.facebook.com/people/Rian7x/61578222936848/",
+        "https://www.instagram.com/sevenxoficial7x/",
+        "https://www.instagram.com/rian7xofc/",
+        "https://x.com/Rian7xOfc"
+      ],
+      "album": [
+        {
+          "@type": "MusicAlbum",
+          "name": "Tempo Novo",
+          "url": "https://open.spotify.com/album/54RgrGeSxSdyoTcneJ62NT"
+        },
+        {
+          "@type": "MusicAlbum",
+          "name": "Noites Eternas",
+          "url": "https://open.spotify.com/album/6fE6p3YveQpkdNIM7zo0Bt"
+        }
+      ],
+      "track": [
+        {
+          "@type": "MusicRecording",
+          "name": "Tempo Novo",
+          "url": "https://www.youtube.com/watch?v=-OxjLgWYfxM"
+        },
+        {
+          "@type": "MusicRecording",
+          "name": "Oh Garota",
+          "url": "https://www.youtube.com/watch?v=dYwUz-IKihg"
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="gradient-bg text-white">
 
@@ -61,21 +110,21 @@
             <img 
                 src="https://yt3.googleusercontent.com/D1t53q6L3wyo53tECI6b1fH5vHPIZL3txJyKHl5CdsZj0vKI17CgTuMn4-8nKWZa5TMwK901s7A=s160-c-k-c0x00ffffff-no-rj" 
                 alt="Foto de perfil de Rian 7x" 
-                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-gray-700 shadow-lg object-cover"
+                class="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-4 sm:mb-6 border-4 border-gray-700 shadow-lg object-cover"
                 onerror="this.onerror=null;this.src='https://placehold.co/200x200/CCCCCC/FFFFFF?text=Erro';"
             >
             
             <!-- NOME DO ARTISTA -->
-            <h1 class="text-4xl sm:text-5xl font-black tracking-tight">Rian 7x</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">Rian 7x</h1>
             
             <!-- BIOGRAFIA -->
-            <p class="text-gray-400 mt-2 text-base sm:text-lg">Ouça minhas músicas nas principais plataformas.</p>
+            <p class="text-gray-400 mt-2 text-sm sm:text-base">Ouça minhas músicas nas principais plataformas.</p>
         </header>
 
         <main>
             <!-- SEÇÃO DO VÍDEO PRINCIPAL -->
-            <div class="mb-8 md:mb-10">
-                <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 tracking-tight">Música em Destaque</h2>
+            <div class="mb-6 sm:mb-8 md:mb-10">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Música em Destaque</h2>
                 <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                     <iframe 
                         src="https://www.youtube.com/embed/-OxjLgWYfxM" 
@@ -85,59 +134,85 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                 <p class="text-center text-gray-400 mt-2 text-sm sm:text-base">Tempo Novo</p>
+                 <p class="text-center text-white mt-2 text-sm sm:text-base font-semibold">Tempo Novo</p>
+            </div>
+
+            <!-- SEÇÃO DE ÁLBUNS EM DESTAQUE -->
+            <div class="mb-6 sm:mb-8 md:mb-10">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Álbuns em Destaque</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <!-- Álbum 1: Tempo Novo -->
+                    <div>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/54RgrGeSxSdyoTcneJ62NT?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <!-- Álbum 2: Noites Eternas -->
+                    <div>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6fE6p3YveQpkdNIM7zo0Bt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DE PLAYLIST -->
+            <div class="mb-6 sm:mb-8 md:mb-10">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Minha Playlist</h2>
+                <div class="rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6xJQUDWw2tsFidGSJieqyf?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
             </div>
 
             <!-- SEÇÃO DE OUTRAS MÚSICAS -->
-            <div class="mb-8 md:mb-10">
-                <h2 class="text-xl sm:text-2xl font-bold text-center mb-4 tracking-tight">Outras Músicas</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="mb-6 sm:mb-8 md:mb-10">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center mb-3 sm:mb-4 tracking-tight">Outras Músicas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <!-- Vídeo 1 -->
                     <div>
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/hooetif2Pf0" title="Rian 7x - Oh Garota slowed+reverb" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-gray-400 mt-2 text-sm">Oh Garota slowed+reverb</p>
+                        <p class="text-center text-white mt-2 text-sm font-semibold">Oh Garota slowed+reverb</p>
                     </div>
                     <!-- Vídeo 2 -->
                     <div>
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/dYwUz-IKihg" title="Rian 7x - Oh Garota" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-gray-400 mt-2 text-sm">Oh Garota</p>
+                        <p class="text-center text-white mt-2 text-sm font-semibold">Oh Garota</p>
                     </div>
                     <!-- Vídeo 3 -->
                     <div>
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/9_HxuV-jrjQ" title="Rian 7x - Ei Menina" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-gray-400 mt-2 text-sm">Ei Menina</p>
+                        <p class="text-center text-white mt-2 text-sm font-semibold">Ei Menina</p>
                     </div>
                     <!-- Vídeo 4 -->
                     <div>
                         <div class="video-container rounded-lg overflow-hidden shadow-lg border border-gray-800">
                             <iframe src="https://www.youtube.com/embed/CZtNgGBvnUM" title="Rian 7x - Te Amar Agora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <p class="text-center text-gray-400 mt-2 text-sm">Te Amar Agora</p>
+                        <p class="text-center text-white mt-2 text-sm font-semibold">Te Amar Agora</p>
                     </div>
                 </div>
             </div>
 
             <!-- SEÇÃO DOS LINKS -->
-            <div class="mb-8 md:mb-10 space-y-4">
+            <div class="mb-6 sm:mb-8 md:mb-10 space-y-4">
                 <a href="https://open.spotify.com/artist/0HdsNGdAYF3Zg3aJRuhmno" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-500/90 hover:bg-green-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-spotify fa-lg mr-4"></i><span>Ouvir no Spotify</span></a>
                 <a href="https://youtube.com/@rian7xofc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-red-600/90 hover:bg-red-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-youtube fa-lg mr-4"></i><span>Ver no YouTube</span></a>
                 <a href="https://music.amazon.com.br/artists/B0F9YPX7CL" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-400/90 hover:bg-blue-400 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fa-solid fa-music fa-lg mr-4"></i><span>Ouvir na Amazon Music</span></a>
                 <a href="https://link.deezer.com/s/30swZ7rYnHqH7CjkMXY8x" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-gray-800/90 hover:bg-gray-700 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-deezer fa-lg mr-4"></i><span>Ouvir no Deezer</span></a>
                 <a href="https://www.facebook.com/people/Rian7x/61578222936848/" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-blue-600/90 hover:bg-blue-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-facebook fa-lg mr-4"></i><span>Seguir no Facebook</span></a>
+                <a href="https://x.com/Rian7xOfc" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-black/90 hover:bg-black text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-x-twitter fa-lg mr-4"></i><span>Seguir no X</span></a>
+                <a href="https://www.instagram.com/sevenxoficial7x/" target="_blank" rel="noopener noreferrer" class="link-button instagram-gradient flex items-center justify-center w-full text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-instagram fa-lg mr-4"></i><span>Instagram (Sevenx)</span></a>
+                <a href="https://www.instagram.com/rian7xofc/" target="_blank" rel="noopener noreferrer" class="link-button instagram-gradient flex items-center justify-center w-full text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-instagram fa-lg mr-4"></i><span>Instagram (Rian 7x)</span></a>
                 <a href="https://wa.me/c/558896968831" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-green-600/90 hover:bg-green-600 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-whatsapp fa-lg mr-4"></i><span>Catálogo de Produtos</span></a>
                 <a href="https://whatsapp.com/channel/0029Vb6RxgvJ3jus5szLC50r" target="_blank" rel="noopener noreferrer" class="link-button flex items-center justify-center w-full bg-teal-500/90 hover:bg-teal-500 text-white font-bold py-3 px-5 sm:py-4 sm:px-6 rounded-lg shadow-md"><i class="fab fa-whatsapp fa-lg mr-4"></i><span>Canal no WhatsApp</span></a>
             </div>
 
-            <!-- SEÇÃO DE CONTATO (NOVA) -->
-            <div class="mb-8 md:mb-10 text-center">
-                <h2 class="text-xl sm:text-2xl font-bold mb-4 tracking-tight">Contato Profissional</h2>
-                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-6 max-w-md mx-auto">
+            <!-- SEÇÃO DE CONTATO -->
+            <div class="mb-6 sm:mb-8 md:mb-10 text-center">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 tracking-tight">Contato Profissional</h2>
+                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-5 sm:p-6 max-w-md mx-auto">
                     <p class="text-gray-300 mb-4">Entre em contato para:</p>
                     <ul class="text-left space-y-2 mb-6">
                         <li class="flex items-center"><span class="text-green-400 mr-2">✅</span> Shows & Eventos</li>
@@ -152,7 +227,7 @@
 
         </main>
 
-        <footer class="text-center mt-10 md:mt-12">
+        <footer class="text-center mt-8 md:mt-10">
             <p class="text-gray-500 text-sm">&copy; <span id="year"></span> Rian 7x. Todos os direitos reservados.</p>
         </footer>
     </div>
